@@ -1,0 +1,169 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<!-- Favicon -->
+	<link href="{% static 'driver/img/favicon.ico' %}" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Icon Font Stylesheet -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="{% static 'driver/lib/animate/animate.min.css' %}" rel="stylesheet">
+	<link href="{% static 'driver/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="{% static 'driver/css/bootstrap.min.css' %}" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="{% static 'driver/css/style.css' %}" rel="stylesheet">
+	<style>
+			/* Style the scrollbar */
+	::-webkit-scrollbar {
+	width: 12px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	background: #172941;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	background: #ffd662;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	background: #FFF1C9;
+	}
+	</style>
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<!-- <div id="spinner" class="show bg-dark-blue position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-grow text-primary" role="status"></div>
+	</div> -->
+	<!-- Spinner End -->
+
+
+	<!-- Navbar Start -->
+	<div class="container-fluid fixed-top px-0 wow fadeIn bg-gradient-1" data-wow-delay="0.1s">
+		<nav class="navbar navbar-expand-lg navbar-dark px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+			<a href="#" class="navbar-brand ms-4 ms-lg-0">
+				<img src="{% static 'driver/img/foreqast_logo.png' %}" width="250px" class="d-inline-block" />
+			</a>
+			<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav px-3 ms-lg-auto">
+          {% block nav %}
+          {% endblock %}
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- Navbar End -->
+
+
+	{% block content %}
+  {% endblock %}
+
+	{% block footer %}
+	<!-- Footer Start -->
+	<div id="footer" class="container-fluid bg-dark-blue text-white-50 footer pt-5 wow fadeIn" data-wow-delay="0.1s fixed-bottom">
+		<div class="container py-5">
+			<div class="row g-5">
+				<div class="col-lg-3 col-md-6">
+					<img src="{% static 'driver/img/foreqast_logo.png' %}" class="img-fluid w-75 mb-2">
+					<p>We ensures that your drivers drive the most efficient route possible.</p>
+					<div class="d-flex pt-2">
+						<a class="btn btn-square me-1" href="https://twitter.com/ForeQast
+						"><i class="fab fa-twitter"></i></a>
+						<a class="btn btn-square me-0" href="https://www.linkedin.com/company/foreqastai/
+						"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-light mb-4">Address</h5>
+					<div class="d-flex">
+					  <i class="fa fa-map-marker-alt me-3"></i>
+					  <p><span>ForeQast Technologies Limited</span><br/>
+						<span>383 Stillmeadow Circle,</span><br/>
+						<span>Waterloo, Ontario, Canada</span><br/>
+						<span>N2L 5M1</span>
+					 </p>
+			    	</div>
+					<!-- <p><i class="fa fa-phone-alt me-3"></i></p> -->
+					
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-light mb-4">Quick Links</h5>
+					<a class="btn btn-link" href="#">About Us</a>
+					<a class="btn btn-link" href="#">Routing</a>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5 class="text-light mb-4">Subscribe</h5>
+					<p>Subscribe to the exclusive product updates, content and event invitations.</p>
+					<div class="position-relative mx-auto" style="max-width: 400px;">
+					</div>
+					<div class="d-none d-lg-flex ms-2">
+						<a class="btn btn-primary py-2 px-3 me-3 text-nowrap" href="#">
+							Subscribe
+							<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+								<i class="fa fa-arrow-right"></i>
+							</div>
+						</a>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid copyright" style="background-color: #172941;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center mb-3 mb-md-0">
+						&copy; <a href="#">ForeQast Routing</a>, All Right Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer End -->
+	{% endblock %}
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="{% static 'driver/lib/wow/wow.min.js' %}"></script>
+	<script src="{% static 'driver/lib/easing/easing.min.js' %}"></script>
+	<script src="{% static 'driver/lib/waypoints/waypoints.min.js' %}"></script>
+	<script src="{% static 'driver/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'driver/lib/parallax/parallax.min.js' %}"></script>
+
+	<!-- Template Javascript -->
+	<script src="{% static 'driver/js/main.js' %}"></script>
+</body>
+
+</html>

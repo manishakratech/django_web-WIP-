@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}
+    Driver home
+{% endblock %}
+
+{% block nav %}
+<a href="{% url 'driver-home' %}" class="nav-item nav-link text-uppercase">Home</a>
+<a href="{% url 'driver-login' %}" class="nav-item nav-link text-uppercase active">Login</a>
+{% endblock %}
+
+{% block content %}
+  <section style="background-color: #254b80;padding-top: 150px;">
+    <div class="container">
+        <div class="row">
+            <div style="padding-bottom: 170px;">
+  
+              <!-- flash message -->
+              {% if error_message %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error_message }}
+                </div>
+              {% endif %}
+
+              <div class="card shadow border-0">
+                <div class="card-body" style="padding-bottom: 25px;">
+                    <form method="post" class="d-flex" style="gap:10px">
+                        {% csrf_token %}
+                        <label for="store">Store:</label>
+                        <input class="form-control form-control-lg" type="text" id="store" name="store" required>
+                        <br>
+                        <label for="vehicle">Vehicle:</label>
+                        <input class="form-control form-control-lg" type="text" id="vehicle" name="vehicle" required>
+                        <br>
+                        <label for="shift">Shift:</label>
+                        <input class="form-control form-control-lg" type="text" id="shift" name="shift" required>
+                        <br>
+                        <label for="date">date:</label>
+                        <input type="date" id="date" name="date">
+                        <br>
+                        <button class="btn btn-outline-info btn-primary w-100 py-2" type="submit">Submit</button>
+                    </form>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

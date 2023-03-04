@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block nav %}
+<a href="{% url 'driver-home' %}" class="nav-item nav-link text-uppercase active">Home</a>
+<a href="{% url 'driver-login' %}" class="nav-item nav-link text-uppercase">Login</a>
+{% endblock %}
+
+{% block content %}
+  <!-- Carousel Start -->
+	<div class="container-fluid p-0">
+		<div class="vh-100 vh-sm-80 position-relative d-flex align-items-center">
+			<video autoplay loop="" muted="" playsinline="" class="object-cover top-0 position-absolute w-100 h-120 z-index-1"
+				src="{% static 'driver/videos/delivery.mp4' %}" data-home-hero-loop-video=""></video>
+			
+			<div class="col-sm-12 py-10 position-relative">
+				<div class="text-white hero_text fw-bold text-center">
+					<p style="font-size: 60px;">Join Our Winning Team of Delivery Experts</p>
+					<p style="font-size: 60px;">and Deliver Happiness to Our Customers!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Carousel End -->
+{% endblock %}
+
+{% block footer %}{% endblock %}
