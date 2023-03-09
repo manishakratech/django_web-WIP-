@@ -810,3 +810,17 @@ path[data-story-line-animated-line].animated {
         font-size: 38px;
     }
   }
+
+input[type="date"]{
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono",monospace;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
